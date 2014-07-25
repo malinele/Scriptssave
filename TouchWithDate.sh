@@ -1,4 +1,5 @@
 #!/usr/bin/ksh
+########
 for F in $(find . -type f -exec basename {} \;);do
         echo ${F}
         F1=$(echo "${F}" | awk -F '.' '{print $1".FIN"}')
