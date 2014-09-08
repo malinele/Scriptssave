@@ -1,0 +1,4 @@
+#!/bin/sh
+/opt/cisco/vpn/bin/vpn disconnect 
+osascript -e 'tell application "Terminal" to quit' &
+exit
