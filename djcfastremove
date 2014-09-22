@@ -1,0 +1,13 @@
+#!/bin/ksh
+djc -l | grep 201| awk -F ' ' '{print $1}' > trt
+djc -l | grep 201| awk -F ' ' '{print $1 " " $2}' > trt3
+
+
+while read line
+do
+        COM1=$(grep ${line} trt3 | head -n 1 | awk -F ' ' '{print $2}')
+#       echo ${COM1}
+        COM2="djc -d -s ${line} -r ${COM1}"
+        echo ${COM2}
+        eval ${COM2}
+done < trt
